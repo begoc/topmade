@@ -1,0 +1,8 @@
+vendor
+# these should come last
+!.gitkeep
+# phpstorm project folder
+.idea
+*.swp
+._*
+.DS_Store
