@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace Topmade\Services;
 
-use App\User;
+use Topmade\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

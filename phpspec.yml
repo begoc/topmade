@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Topmade
+        psr4_prefix: Topmade
         src_path: app
