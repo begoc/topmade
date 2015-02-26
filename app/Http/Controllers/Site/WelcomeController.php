@@ -1,4 +1,6 @@
-<?php namespace Topmade\Http\Controllers;
+<?php namespace Topmade\Http\Controllers\Site;
+
+use Topmade\Http\Controllers\Controller;
 
 class WelcomeController extends Controller {
 
@@ -15,8 +17,6 @@ class WelcomeController extends Controller {
 
 	/**
 	 * Create a new controller instance.
-	 *
-	 * @return void
 	 */
 	public function __construct()
 	{
@@ -26,11 +26,13 @@ class WelcomeController extends Controller {
 	/**
 	 * Show the application welcome screen to the user.
 	 *
+	 * @Get("/", as="home")
+	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return view('welcome');
+		return view('site.welcome');
 	}
 
 }

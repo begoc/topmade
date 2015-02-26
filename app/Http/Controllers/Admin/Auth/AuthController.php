@@ -1,4 +1,4 @@
-<?php namespace Topmade\Http\Controllers\Auth;
+<?php namespace Topmade\Http\Controllers\Admin\Auth;
 
 use Topmade\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -20,19 +20,41 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
+	protected $redirectTo = '/admin';
+
 	/**
 	 * Create a new authentication controller instance.
 	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
-	 * @return void
+	 * @param  \Illuminate\Contracts\Auth\Guard $auth
+	 * @param  \Illuminate\Contracts\Auth\Registrar $registrar
 	 */
 	public function __construct(Guard $auth, Registrar $registrar)
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+		$this->middleware('guest', ['except' => ['getLogout', 'getRegister', 'postRegister']]);
+		$this->middleware('auth', ['only' => ['getLogout', 'getRegister', 'postRegister']]);
+	}
+
+	/**
+	 * Show the application registration form.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getRegister()
+	{
+		return view('admin.auth.register');
+	}
+
+	/**
+	 * Show the application login form.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function getLogin()
+	{
+		return view('admin.auth.login');
 	}
 
 }

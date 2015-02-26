@@ -1,4 +1,4 @@
-<?php namespace Topmade;
+<?php namespace Topmade\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

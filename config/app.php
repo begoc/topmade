@@ -144,6 +144,7 @@ return [
 		'Topmade\Providers\ConfigServiceProvider',
 		'Topmade\Providers\EventServiceProvider',
 		'Topmade\Providers\RouteServiceProvider',
+		'Topmade\Providers\AnnotationsServiceProvider',
 
 	],
 
