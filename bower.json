@@ -1,0 +1,7 @@
+{
+  "name": "Topmade",
+  "dependencies": {
+    "startbootstrap-sb-admin-2": "git@github.com:IronSummitMedia/startbootstrap-sb-admin-2.git#~1.0.5",
+    "startbootstrap-grayscale": "git@github.com:IronSummitMedia/startbootstrap-grayscale.git#~1.0.3"
+  }
+}
