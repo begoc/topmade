@@ -1,7 +1,7 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+  	"name": "bego/topmade",
+	"description": "Sitio web Topmade.",
+	"keywords": ["topmade"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
