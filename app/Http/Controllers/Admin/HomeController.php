@@ -2,7 +2,8 @@
 
 use Topmade\Http\Controllers\Controller;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
 	/*
 	|--------------------------------------------------------------------------

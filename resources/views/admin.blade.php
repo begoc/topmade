@@ -9,6 +9,7 @@
 	<title>Topmade</title>
 
 	<link href="/css/admin.css" rel="stylesheet">
+	<link href="{{ elixir("css/admin.costume.css") }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>

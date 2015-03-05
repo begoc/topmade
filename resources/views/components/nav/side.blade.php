@@ -59,7 +59,7 @@
             </li>
             <!-- /.localización -->
             <li>
-                <a href="#"><i class="fa fa-edit fa-fw"></i> Contacto</a>
+                <a href="{{route('admin.contact')}}"><i class="fa fa-edit fa-fw"></i> Contacto</a>
             </li>
             <!-- /.Contacto -->
         </ul>

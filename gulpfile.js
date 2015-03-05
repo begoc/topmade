@@ -31,6 +31,9 @@ elixir(function(mix) {
         ], 'public/js/admin.js', 'vendor/bower_components')
         .copy('vendor/bower_components/bootstrap/fonts', 'public/fonts')
         .copy('vendor/bower_components/font-awesome/fonts', 'public/fonts');
+    mix.styles([
+            'admin.css'
+        ], 'public/css/admin.costume.css');
 
     // Site
     mix.styles([
@@ -43,6 +46,8 @@ elixir(function(mix) {
         ], 'public/js/app.js', 'vendor/bower_components');
     mix.styles([
             'site.css'
-        ], 'public/css/site.css')
-        .version('css/site.css');
+        ], 'public/css/site.css');
+
+
+    mix.version(['css/site.css', 'css/admin.costume.css']);
 });
