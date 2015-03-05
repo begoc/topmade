@@ -1,5 +1,6 @@
 <?php namespace Topmade\Http\Controllers\Admin\Auth;
 
+use Illuminate\Http\Request;
 use Topmade\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -21,6 +22,8 @@ class AuthController extends Controller {
 	use AuthenticatesAndRegistersUsers;
 
 	protected $redirectTo = '/admin';
+
+	protected $loginPath = '/admin';
 
 	/**
 	 * Create a new authentication controller instance.
@@ -45,6 +48,28 @@ class AuthController extends Controller {
 	public function getRegister()
 	{
 		return view('admin.auth.register');
+	}
+
+	/**
+	 * Handle a registration request for the application.
+	 *
+	 * @param \Illuminate\Http\Request $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postRegister(Request $request)
+	{
+		$validator = $this->registrar->validator($request->all());
+
+		if ($validator->fails())
+		{
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
+
+		$this->registrar->create($request->all());
+
+		return redirect($this->redirectPath());
 	}
 
 	/**

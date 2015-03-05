@@ -20,13 +20,13 @@ class WelcomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('guest');
+		//
 	}
 
 	/**
 	 * Show the application welcome screen to the user.
 	 *
-	 * @Get("/", as="home")
+	 * @Get("/")
 	 *
 	 * @return Response
 	 */

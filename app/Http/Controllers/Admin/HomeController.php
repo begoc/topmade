@@ -26,7 +26,7 @@ class HomeController extends Controller {
 	/**
 	 * Show the application welcome screen to the user.
 	 *
-	 * @Get("/admin")
+	 * @Get("/admin", as="dashboard")
 	 *
 	 * @return Response
 	 */
