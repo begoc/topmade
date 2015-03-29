@@ -37,16 +37,13 @@
                         <a href="#"><i class="fa fa-compass fa-fw"></i> Climatización</a>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-fire fa-fw"></i> Incendios</a>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Mantenimiento</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-cubes fa-fw"></i> Instalaciones técnicas</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-umbrella fa-fw"></i> Agua</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-flash fa-fw"></i> Energía</a>
+                        <a href="#"><i class="fa fa-flash fa-fw"></i> Electricidad</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-recycle fa-fw"></i> Energía Renovable</a>
@@ -54,10 +51,6 @@
                 </ul>
                 <!-- /.actividades -->
             </li>
-            <li>
-                <a href="#"><i class="fa fa-map-marker fa-fw"></i> Localización</a>
-            </li>
-            <!-- /.localización -->
             <li>
                 <a href="{{route('admin.contact')}}"><i class="fa fa-edit fa-fw"></i> Contacto</a>
             </li>
