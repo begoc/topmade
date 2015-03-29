@@ -10,7 +10,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * Class User
  * @package Topmade\Models
  *
- * @property string id
+ * @property int id
  * @property string name
  * @property string email
  * @property Contact contact
