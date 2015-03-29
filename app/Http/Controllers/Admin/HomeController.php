@@ -1,5 +1,7 @@
 <?php namespace Topmade\Http\Controllers\Admin;
 
+use Illuminate\Contracts\Auth\Guard;
+use Topmade\Contracts\Repositories\Contact;
 use Topmade\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -29,11 +31,15 @@ class HomeController extends Controller
 	 *
 	 * @Get("/admin", as="dashboard")
 	 *
+	 * @param Guard $auth
+	 * @param Contact $contact
 	 * @return Response
 	 */
-	public function index()
+	public function index(Guard $auth, Contact $contact)
 	{
-		return view('admin.home');
+		$contact = $contact->contact($auth->user());
+
+		return view('admin.home', ['contact' => $contact]);
 	}
 
 }

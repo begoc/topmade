@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"admin.costume.js","sourcesContent":["// loading state on a button for save buttons\n$('#save').on('click', function () {\n    var $btn = $(this).button('loading')\n})\n\n$(function () {\n    $('[data-toggle=\"popover\"]').popover()\n})"],"sourceRoot":"/source/"}

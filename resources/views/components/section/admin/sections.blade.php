@@ -1,0 +1,1 @@
+@include('components.section.admin.sections.enterprise')

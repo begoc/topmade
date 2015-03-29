@@ -27,5 +27,6 @@
 
 	<!-- Scripts -->
 	<script src="/js/admin.js"></script>
+	<script src="{{ elixir("js/admin.costume.js") }}"></script>
 </body>
 </html>

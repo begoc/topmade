@@ -1,1 +1,1 @@
-{"version":3,"sources":["admin.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"admin.costume.css","sourcesContent":["@media only screen and (max-width: 768px) {\n    .navbar-top-links .dropdown-user {\n        left: 0;\n    }\n}\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["admin.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"admin.costume.css","sourcesContent":["@media (max-width: 767px) {\n    .navbar-top-links .dropdown-user {\n        left: 0;\n    }\n}\n"],"sourceRoot":"/source/"}

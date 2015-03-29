@@ -1,18 +1,35 @@
 <?php namespace Topmade\Http\Controllers\Admin\Auth;
 
-use Topmade\Http\Requests;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
+use Topmade\Contracts\Repositories\Contact;
 use Topmade\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+use Topmade\Http\Requests\CreateContactRequest;
 
 class ContactController extends Controller
 {
 	/**
-	 * Create a new controller instance.
+	 * @var Contact
 	 */
-	public function __construct()
+	private $contact;
+	/**
+	 * @var Guard
+	 */
+	private $auth;
+
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @param \Illuminate\Contracts\Auth\Guard $auth
+	 * @param Contact $contact
+	 */
+	public function __construct(Guard $auth, Contact $contact)
 	{
 		$this->middleware('auth');
+
+		$this->contact = $contact;
+		$this->auth = $auth;
 	}
 
 	/**
@@ -20,75 +37,38 @@ class ContactController extends Controller
 	 *
 	 * @Get("/admin/contact", as="admin.contact")
 	 *
+	 * @param Request $request
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-		return view('admin.contact');
-	}
+		$info = $request->session()->get('info');
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+		$contact = $this->contact->contact($this->auth->user());
+
+		return view('admin.contact', compact('contact', 'info'));
 	}
 
 	/**
 	 * Store a newly created resource in storage.
+	 * @Post("/admin/contact")
 	 *
+	 * @param CreateContactRequest $request
 	 * @return Response
 	 */
-	public function store()
+	public function store(CreateContactRequest $request)
 	{
-		//
-	}
+		$validator = $this->contact->validator($request->all());
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+		if ($validator->fails())
+		{
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+		$this->contact->update($request->getId(), $request->all());
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
+		return redirect('/admin/contact')->with('info', 'Contacto actualizado');
 	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

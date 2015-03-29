@@ -33,7 +33,10 @@ elixir(function(mix) {
         .copy('vendor/bower_components/font-awesome/fonts', 'public/fonts');
     mix.styles([
             'admin.css'
-        ], 'public/css/admin.costume.css');
+        ], 'public/css/admin.costume.css')
+        .scripts([
+            'admin.js'
+        ], 'public/js/admin.costume.js');
 
     // Site
     mix.styles([
@@ -49,5 +52,5 @@ elixir(function(mix) {
         ], 'public/css/site.css');
 
 
-    mix.version(['css/site.css', 'css/admin.costume.css']);
+    mix.version(['css/site.css', 'css/admin.costume.css', 'public/js/admin.costume.js']);
 });

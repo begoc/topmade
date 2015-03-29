@@ -29,6 +29,16 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'Topmade\Services\Registrar'
 		);
+
+		$this->app->bind(
+			'Topmade\Contracts\Repositories\Contact',
+			'Topmade\Repositories\Contact'
+		);
+
+		$this->app->bind(
+			'Topmade\Contracts\Repositories\Section',
+			'Topmade\Repositories\Section'
+		);
 	}
 
 }
