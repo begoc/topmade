@@ -29,7 +29,7 @@ class Contact implements ContactContract
      * Get a contact instance.
      *
      * @param User $user
-     * @return Contact
+     * @return Model
      */
     public function contact($user)
     {
@@ -41,7 +41,7 @@ class Contact implements ContactContract
      *
      * @param $id
      * @param  array $data
-     * @return Contact
+     * @return Model
      */
     public function update($id, array $data)
     {
@@ -61,7 +61,7 @@ class Contact implements ContactContract
     /**
      * @param $id
      * @param array $attributes
-     * @return Contact
+     * @return Model
      */
     private function findOrNew($id, array $attributes)
     {

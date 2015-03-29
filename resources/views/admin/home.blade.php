@@ -15,7 +15,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12 col-md-7 col-lg-8">
-				@include('components.section.admin.sections')
+				@include('components.section.admin.sections.enterprise', ['section' => $sections->get('enterprise')])
 			</div>
 
 			<div class="col-sm-12 col-md-5 col-lg-4">

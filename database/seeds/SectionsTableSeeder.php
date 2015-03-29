@@ -20,10 +20,30 @@ class SectionsTableSeeder extends Seeder
     public function run()
     {
         $sections = [
-            ['handle' => 'company'],
-            ['handle' => 'activities'],
-            ['handle' => 'location'],
-            ['handle' => 'contact']
+            [
+                'handle' => 'company',
+                'title' => 'TOPMADE Empresa - Aire Acondicionado - Calefacción - ACS',
+                'description' => 'TOPMADE Empresa - Aire Acondicionado - Calefacción - ACS',
+                'author' => 'topmade'
+            ],
+            [
+                'handle' => 'activities',
+                'title' => 'TOPMADE Actividades - Aire Acondicionado - Calefacción - ACS',
+                'description' => 'TOPMADE Actividades - Aire Acondicionado - Calefacción - ACS',
+                'author' => 'topmade'
+            ],
+            [
+                'handle' => 'location',
+                'title' => 'TOPMADE Localización - Aire Acondicionado - Calefacción - ACS',
+                'description' => 'TOPMADE Localización - Aire Acondicionado - Calefacción - ACS',
+                'author' => 'topmade'
+            ],
+            [
+                'handle' => 'contact',
+                'title' => 'TOPMADE Contactenos - Aire Acondicionado - Calefacción - ACS',
+                'description' => 'TOPMADE Contactenos - Aire Acondicionado - Calefacción - ACS',
+                'author' => 'topmade'
+            ]
         ];
 
         foreach ($sections as $section) {

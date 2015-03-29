@@ -4,6 +4,18 @@ namespace Topmade\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Contact
+ * @package Topmade\Models
+ *
+ * @property int id
+ * @property string title
+ * @property string keywords
+ * @property string description
+ * @property string author
+ * @property string handle
+ */
+
 class Section extends Model
 {
     /**
