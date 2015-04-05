@@ -2,13 +2,11 @@
 
 namespace Topmade\Contracts\Repositories;
 
-interface Section extends Repository
+interface Article extends Repository
 {
     public function create(array $data);
 
     public function update($id, array $data);
 
-    public function all();
-
-    public function findByHandel($handle);
+    public function find($id);
 }

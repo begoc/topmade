@@ -1,8 +1,8 @@
 <?php
 
 
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Database\Seeder;
+use Topmade\Contracts\Repositories\Section;
 
 class SectionsTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class SectionsTableSeeder extends Seeder
      */
     private $section;
 
-    public function __construct(SectionRepository $section)
+    public function __construct(Section $section)
     {
         $this->section = $section;
     }

@@ -48,7 +48,7 @@ return [
 
 		'sqlite' => [
 			'driver'   => 'sqlite',
-			'database' => storage_path().'/topmade.sqlite',
+			'database' => base_path(). '/database/topmade.sqlite',
 			'prefix'   => '',
 		],
 

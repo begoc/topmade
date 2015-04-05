@@ -3,7 +3,7 @@
 
 use Illuminate\Contracts\Auth\Guard;
 
-class CreateContactRequest extends Request {
+class ManageContactRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.

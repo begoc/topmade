@@ -23,16 +23,8 @@
 </head>
 <body>
 
-	<div id="wrapper">
-		@include('components.nav.admin.header')
+	@yield('content')
 
-		@include('components.nav.admin.side')
-
-		<div id="page-wrapper">
-			@yield('content')
-		</div>
-	</div>
-	<!-- Wrapper -->
 	<!-- Scripts -->
 	<script src="/js/admin.js"></script>
 	<script src="{{ elixir("js/admin.costume.js") }}"></script>

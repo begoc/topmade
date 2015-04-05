@@ -36,4 +36,9 @@ class Section extends Model
         'description',
         'author',
     ];
+
+    public function articles()
+    {
+        return $this->hasMany('Topmade\Models\Articles');
+    }
 }
