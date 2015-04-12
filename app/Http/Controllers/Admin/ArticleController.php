@@ -52,7 +52,7 @@ class ArticleController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @Post("/admin/article")
+     * @Post("/admin/article", as="admin.article.save")
      *
      * @param ManageArticleRequest $request
      * @return Response
@@ -67,9 +67,8 @@ class ArticleController extends Controller
                 $validator
             );
         }
-
         $this->article->update($request->getId(), $request->all());
 
-        return redirect('/admin/article')->with('info', 'Articulo actualizado');
+        return redirect('/admin/article/' . $request->getId())->with('info', 'Articulo actualizado');
     }
 }

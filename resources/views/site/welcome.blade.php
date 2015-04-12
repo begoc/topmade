@@ -1,7 +1,8 @@
-@extends('app')
+@extends('site')
 
 @section('content')
-<div class="container">
-
-</div>
+    @include('components.section.header')
+    @include('components.section.company')
+    @include('components.section.clients')
+    @include('components.section.contact')
 @endsection

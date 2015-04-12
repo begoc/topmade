@@ -12,7 +12,7 @@ class ManageArticleRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,7 @@ class ManageArticleRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required'
         ];
     }
-
 }

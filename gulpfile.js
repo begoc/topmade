@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
 
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,13 +15,13 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     // Admin
     mix.styles([
-            'bootstrap/dist/css/bootstrap.min.css',
-            'metisMenu/dist/metisMenu.min.css',
-            'startbootstrap-sb-admin-2/dist/css/timeline.css',
-            'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css',
-            'morrisjs/morris.css',
-            'font-awesome/css/font-awesome.min.css'
-        ], 'public/css/admin.css', 'vendor/bower_components')
+        'bootstrap/dist/css/bootstrap.min.css',
+        'metisMenu/dist/metisMenu.min.css',
+        'startbootstrap-sb-admin-2/dist/css/timeline.css',
+        'startbootstrap-sb-admin-2/dist/css/sb-admin-2.css',
+        'morrisjs/morris.css',
+        'font-awesome/css/font-awesome.min.css'
+    ], 'public/css/admin.css', 'vendor/bower_components')
         .scripts([
             'jquery/dist/jquery.min.js',
             'bootstrap/dist/js/bootstrap.min.js',
@@ -32,25 +33,34 @@ elixir(function(mix) {
         .copy('vendor/bower_components/bootstrap/fonts', 'public/fonts')
         .copy('vendor/bower_components/font-awesome/fonts', 'public/fonts');
     mix.styles([
-            'admin.css'
-        ], 'public/css/admin.costume.css')
+        'admin.css'
+    ], 'public/css/admin.costume.css')
         .scripts([
             'admin.js'
         ], 'public/js/admin.costume.js');
 
     // Site
+    mix.less('site.less')
+    .copy('vendor/bower_components/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
+    //mix.styles([
+    //    'bootstrap/dist/css/bootstrap.min.css',
+    //    'startbootstrap-agency/css/agency.css',
+    //], 'public/css/app.css', 'vendor/bower_components')
+    .scripts([
+        'jquery/dist/jquery.min.js',
+        'bootstrap/dist/js/bootstrap.min.js',
+        'startbootstrap-agency/js/classie.js',
+        'startbootstrap-agency/js/cbpAnimatedHeader.js',
+        'startbootstrap-agency/js/jqBootstrapValidation.js',
+        'startbootstrap-agency/js/contact_me.js',
+        'startbootstrap-agency/js/agency.js'
+    ], 'public/js/site.js', 'vendor/bower_components')
+        .copy('vendor/bower_components/startbootstrap-agency/img/map-image.png', 'public/img/map-image.png')
+        .copy('vendor/bower_components/startbootstrap-agency/img/header-bg.jpg', 'public/img/header-bg.jpg');
     mix.styles([
-            'bootstrap/dist/css/bootstrap.min.css',
-            'startbootstrap-business-casual/css/business-casual.css',
-        ], 'public/css/app.css', 'vendor/bower_components')
-        .scripts([
-            'jquery/dist/jquery.min.js',
-            'bootstrap/dist/js/bootstrap.min.js',
-        ], 'public/js/app.js', 'vendor/bower_components');
-    mix.styles([
-            'site.css'
-        ], 'public/css/site.css');
+        'site.css'
+    ], 'public/css/site.costume.css');
 
 
-    mix.version(['css/site.css', 'css/admin.costume.css', 'public/js/admin.costume.js']);
+    mix.version(['css/site.costume.css', 'css/admin.costume.css', 'public/js/admin.costume.js']);
 });

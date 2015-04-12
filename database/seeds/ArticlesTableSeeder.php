@@ -28,7 +28,12 @@ class ArticlesTableSeeder extends Seeder
             [
                 'icon' => 'heart',
                 'title' => 'Quines Sómos',
-                'content' => '',
+                'content' => '<p>TOPMADE es una empresa dedicada al diseño, instalación y mantenimiento de aire acondicionado calefacción y ACS, energía solar térmica y fotovoltaica.</p>
+<p>Empresa certificada en ISO 9001:2000 y 14001:2000.</p>
+<p>Empresa contratista del estado.</p>
+<p>Actuamos en el área comercial, industrial y doméstico tanto para entidades públicas como privadas. Con más de 15 años de experiencia en instalaciones y mantenimientos.</p>
+<p>Nuestro ámbito de actuación se extiende a las comunidades de Valenciana, Murcia, Madrid, Aragón, Castilla la Mancha y otros como Castilla León, Andalucía o La Rioja.</p>
+<p>Contamos con la confianza de clientes como: Adif, Renfe, Urbem, Constructora Hispánica, Perfumerías Prieto, Abertis Telecom, Agencia Tributaria, Siliken, Ibérica de Automóvil, Franquicias Neco, Fomesa, Acanto instalaciones, Ferrocarrils de la Generalitat Valenciana, Medioambiente Dalmau...</p>',
                 'section' => 'company',
                 'order' => '1',
             ],

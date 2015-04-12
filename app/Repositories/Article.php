@@ -2,6 +2,7 @@
 
 namespace Topmade\Repositories;
 
+use Illuminate\Support\Facades\Validator;
 use Topmade\Contracts\Repositories\Article as ArticleContract;
 use Topmade\Models\Article as Model;
 
@@ -9,7 +10,9 @@ class Article implements ArticleContract
 {
     public function validator(array $data)
     {
-        // TODO: Implement validator() method.
+        return Validator::make($data, [
+            'title' => 'required|max:255'
+        ]);
     }
 
     public function create(array $data)
@@ -25,9 +28,15 @@ class Article implements ArticleContract
 
     public function update($id, array $data)
     {
-        // TODO: Implement update() method.
+        $article = $this->find($id);
+
+        return $article->update($data);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Support\Collection|Model|static
+     */
     public function find($id)
     {
         return Model::find($id);
