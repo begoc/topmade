@@ -56,7 +56,6 @@ elixir(function(mix) {
         'startbootstrap-agency/js/agency.js'
     ], 'public/js/site.js', 'vendor/bower_components')
         .copy('vendor/bower_components/startbootstrap-agency/img/map-image.png', 'public/img/map-image.png')
-        .copy('vendor/bower_components/startbootstrap-agency/img/header-bg.jpg', 'public/img/header-bg.jpg');
     mix.styles([
         'site.css'
     ], 'public/css/site.costume.css');

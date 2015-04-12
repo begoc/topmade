@@ -154,6 +154,17 @@ footer div.iso p {
     header .intro-text .intro-heading {
         font-size: 26px;
     }
+
+    img.logo {
+        width: 125px;
+        height: 66px;
+        margin-top: 5px;
+    }
+
+    .navbar-default .nav li a {
+        font-size: 13px;
+        padding-left: 10px;
+    }
 }
 
 /* #### max-width: 1200px #### */
