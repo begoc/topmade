@@ -7,7 +7,7 @@
                     <span>Dándole los mejores</span> servicios y prestaciones
                 </div>
             </div>
-            <a href="#services" class="page-scroll btn btn-xl">Actividades</a>
+            <a href="#activities" class="page-scroll btn btn-xl">Actividades</a>
         </div>
     </div>
 </header>

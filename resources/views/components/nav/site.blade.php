@@ -22,7 +22,7 @@
                     <a class="page-scroll" href="#company">Empresa</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#">Actividades</a>
+                    <a class="page-scroll" href="#activities">Actividades</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#clients">Clientes</a>
