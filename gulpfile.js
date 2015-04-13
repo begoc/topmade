@@ -41,11 +41,10 @@ elixir(function(mix) {
 
     // Site
     mix.less('site.less')
-    .copy('vendor/bower_components/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
-    //mix.styles([
-    //    'bootstrap/dist/css/bootstrap.min.css',
-    //    'startbootstrap-agency/css/agency.css',
-    //], 'public/css/app.css', 'vendor/bower_components')
+    mix.styles([
+        'bootstrap/dist/css/bootstrap.min.css',
+        'font-awesome/css/font-awesome.min.css',
+    ], 'public/css/app.css', 'vendor/bower_components')
     .scripts([
         'jquery/dist/jquery.min.js',
         'bootstrap/dist/js/bootstrap.min.js',

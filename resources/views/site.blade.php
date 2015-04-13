@@ -9,7 +9,7 @@
 
 	<title>Topmade</title>
 
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
 	<link href="/css/site.css" rel="stylesheet">
 	<link href="{{ elixir("css/site.costume.css") }}" rel="stylesheet">
 
