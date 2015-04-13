@@ -13,7 +13,11 @@
                         <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
                     </span>
                 <h4 class="service-heading">Climatización</h4>
-                <p class="text-muted">La climatización le ofrece refrigeración en verano y calefacción en invierno en cualquier lugar donde lo pueda necesitar Aire acondicionado.</p>
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Aire acondicionado</li>
+                    <li class="list-group-item text-muted">Ventilación</li>
+                    <li class="list-group-item text-muted">Calefacción</li>
+                </ul>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -21,7 +25,10 @@
                         <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
                     </span>
                 <h4 class="service-heading">Incendios</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Alarmas contra incendios</li>
+                    <li class="list-group-item text-muted">Domótica</li>
+                </ul>
             </div>
             <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -29,7 +36,12 @@
                         <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
                     </span>
                 <h4 class="service-heading">Mantenimiento</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Asistencia técnica</li>
+                    <li class="list-group-item text-muted">Mantenimiento correctivo</li>
+                    <li class="list-group-item text-muted">Mantenimiento preventivo</li>
+                    <li class="list-group-item text-muted">Analíticas ambientales</li>
+                </ul>
             </div>
         </div>
         <div class="row text-center">
@@ -39,15 +51,21 @@
                         <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
                     </span>
                 <h4 class="service-heading">Electricidad</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Gas</li>
+                    <li class="list-group-item text-muted">Gasoil</li>
+                </ul>
             </div>
             <div class="col-md-6">
                     <span class="fa-stack fa-4x">
-                        <i class="fa fa-recycle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
                     </span>
                 <h4 class="service-heading">Energía Renovable</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <ul class="list-group">
+                    <li class="list-group-item text-muted">Solar</li>
+                    <li class="list-group-item text-muted">Biomasa</li>
+                </ul>
             </div>
         </div>
     </div>

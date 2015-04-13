@@ -57,6 +57,12 @@ header .intro-text .intro-heading div {
     color: #e34240;
 }
 
+#activities .list-group-item {
+    font-size: 15px;
+    border: none;
+    background: none;
+}
+
 footer {
     padding: 25px 0;
     text-align: center;
