@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Http\Request;
+use Topmade\Commands\UserRegister;
 use Topmade\Exceptions\ValidatorException;
 use Topmade\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
