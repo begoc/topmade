@@ -2,71 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Actividades</h2>
-                <h3 class="section-subheading text-muted">Contamos con las mejores y más avanzadas tecnologías</h3>
+                <h2 class="section-heading">{{$activities->title}}</h2>
+                <h3 class="section-subheading text-muted">{{$activities->header}}</h3>
             </div>
         </div>
         <div class="row text-center show-grid">
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Climatización</h4>
-                <ul class="list-group">
-                    <li class="list-group-item text-muted">Aire acondicionado</li>
-                    <li class="list-group-item text-muted">Ventilación</li>
-                    <li class="list-group-item text-muted">Calefacción</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Incendios</h4>
-                <ul class="list-group">
-                    <li class="list-group-item text-muted">Alarmas contra incendios</li>
-                    <li class="list-group-item text-muted">Domótica</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Mantenimiento</h4>
-                <ul class="list-group">
-                    <li class="list-group-item text-muted">Asistencia técnica</li>
-                    <li class="list-group-item text-muted">Mantenimiento correctivo</li>
-                    <li class="list-group-item text-muted">Mantenimiento preventivo</li>
-                    <li class="list-group-item text-muted">Analíticas ambientales</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Electricidad</h4>
-                <ul class="list-group">
-                    <li class="list-group-item text-muted">Gas</li>
-                    <li class="list-group-item text-muted">Gasoil</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Energía Renovable</h4>
-                <ul class="list-group">
-                    <li class="list-group-item text-muted">Solar</li>
-                    <li class="list-group-item text-muted">Biomasa</li>
-                </ul>
-            </div>
+            {!!$activities->content!!}
         </div>
     </div>
 </section>

@@ -2,7 +2,6 @@
 
 use Illuminate\Contracts\Auth\Guard;
 use Topmade\Contracts\Repositories\Contact;
-use Topmade\Contracts\Repositories\Section;
 use Topmade\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -34,15 +33,12 @@ class HomeController extends Controller
      *
      * @param Guard $auth
      * @param Contact $contact
-     * @param Section $section
      * @return Response
      */
-    public function index(Guard $auth, Contact $contact, Section $section)
+    public function index(Guard $auth, Contact $contact)
     {
         $contact = $contact->contact($auth->user());
 
-        $sections = $section->all();
-
-        return view('admin.home', compact('contact', 'sections'));
+        return view('admin.home', compact('contact'));
     }
 }

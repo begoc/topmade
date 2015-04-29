@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Articles
  * @package Topmade\Models
  *
+ * @property string icon
  * @property string title
- * @property string content
- * @property string section_id
- * @property string order
- * @property Section section
+ * @property string handler
+ * @property string header
+ * @property Section content
  */
 class Article extends Model
 {
@@ -32,9 +32,9 @@ class Article extends Model
     protected $fillable = [
         'icon',
         'title',
+        'handler',
+        'header',
         'content',
-        'section_id',
-        'order',
     ];
 
     /**

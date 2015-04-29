@@ -15,42 +15,19 @@
             <li>
                 <a href="{{route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
+            <!-- /.empresa -->
             <li>
-                <a href="#"><i class="fa fa-university fa-fw"></i> Empresa<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{route('admin.article', 1)}}"><i class="fa fa-heart fa-fw"></i> Quienes Sómos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 2)}}"><i class="fa fa-qrcode fa-fw"></i> Recursos Humanos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 3)}}"><i class="fa fa-archive fa-fw"></i> Calidad y Medioambiente</a>
-                    </li>
-                </ul>
-                <!-- /.empresa -->
+                <a href="{{route('admin.article', 'company')}}"><i class="fa fa-university fa-fw"></i> Empresa</a>
             </li>
+            <!-- /.empresa -->
             <li>
-                <a href="#"><i class="fa fa-tasks fa-fw"></i> Actividades<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="{{route('admin.article', 4)}}"><i class="fa fa-compass fa-fw"></i> Climatización</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 5)}}"><i class="fa fa-fire fa-fw"></i> Incendios</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 6)}}"><i class="fa fa-wrench fa-fw"></i> Mantenimiento</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 7)}}"><i class="fa fa-flash fa-fw"></i> Electricidad</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.article', 8)}}"><i class="fa fa-recycle fa-fw"></i> Energía Renovable</a>
-                    </li>
-                </ul>
-                <!-- /.actividades -->
+                <a href="{{route('admin.article', 'activities')}}"><i class="fa fa-tasks fa-fw"></i> Actividades</a>
             </li>
+            <!-- /.actividades -->
+            <li>
+                <a href="{{route('admin.article', 'clients')}}"><i class="fa fa-users fa-fw"></i> Clientes</a>
+            </li>
+            <!-- /.clientes -->
             <li>
                 <a href="{{route('admin.contact')}}"><i class="fa fa-edit fa-fw"></i> Contacto</a>
             </li>

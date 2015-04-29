@@ -20,6 +20,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    {!! Form::label('title', 'Encabezado', ['class' => 'col-sm-2 control-label']) !!}
+                    <div class="col-sm-10">
+                        {!! Form::text('header', null, ['id' => 'header', 'class' => 'form-control', 'placeholder' => 'Encabezado']) !!}
+                    </div>
+                </div>
+                <div class="form-group">
                     {!! Form::label('content', 'Contenido (Formato html)', ['class' => 'col-sm-2 control-label']) !!}
                     <div class="col-sm-10">
                         {!! Form::textarea('content', null, ['id' => 'content', 'class' => 'form-control', 'placeholder' => 'Contenido', 'rows' => 20]) !!}
@@ -31,6 +37,8 @@
             <div class="col-sm-5 col-xs-offset-4 col-sm-offset-5">
                 <div class="form-group">
                     {!! Form::hidden('id', $article->id) !!}
+                    {!! Form::hidden('handler', $article->handler) !!}
+                    {!! Form::hidden('icon', $article->icon) !!}
                     {!! Form::reset('Restaurar', ['class' => 'btn btn-outline btn-default']) !!}
                     {!! Form::button('Guardar', [
                     'id' => 'save',

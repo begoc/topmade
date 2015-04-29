@@ -3,8 +3,9 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectionsTable extends Migration
+class CreateMetaTagsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -12,13 +13,10 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('meta_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('handle')->index();
-            $table->string('title')->nullable();
-            $table->string('keywords')->nullable();
-            $table->string('description')->nullable();
-            $table->string('author')->nullable();
+            $table->string('name')->nullable();
+            $table->string('content')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,7 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sections');
+        Schema::drop('meta_tags');
     }
+
 }

@@ -4,7 +4,7 @@
 use Illuminate\Database\Seeder;
 use Topmade\Contracts\Repositories\Section;
 
-class SectionsTableSeeder extends Seeder
+class MetaTagTableSeeder extends Seeder
 {
 
     /**

@@ -2,103 +2,186 @@
 
 
 use Illuminate\Database\Seeder;
-use Topmade\Contracts\Repositories\Article;
-use Topmade\Contracts\Repositories\Section;
+use Illuminate\Foundation\Bus\DispatchesCommands;
+use Topmade\Commands\StoreArticle;
 
 class ArticlesTableSeeder extends Seeder
 {
-    /**
-     * @var Article
-     */
-    private $article;
-    /**
-     * @var Section
-     */
-    private $section;
-
-    public function __construct(Article $article, Section $section)
-    {
-        $this->article = $article;
-        $this->section = $section;
-    }
+    use DispatchesCommands;
 
     public function run()
     {
         $articles = [
             [
-                'icon' => 'heart',
-                'title' => 'Quines Sómos',
-                'content' => '<p>TOPMADE es una empresa dedicada al diseño, instalación y mantenimiento de aire acondicionado calefacción y ACS, energía solar térmica y fotovoltaica.</p>
-<p>Empresa certificada en ISO 9001:2000 y 14001:2000.</p>
-<p>Empresa contratista del estado.</p>
-<p>Actuamos en el área comercial, industrial y doméstico tanto para entidades públicas como privadas. Con más de 15 años de experiencia en instalaciones y mantenimientos.</p>
-<p>Nuestro ámbito de actuación se extiende a las comunidades de Valenciana, Murcia, Madrid, Aragón, Castilla la Mancha y otros como Castilla León, Andalucía o La Rioja.</p>
-<p>Contamos con la confianza de clientes como: Adif, Renfe, Urbem, Constructora Hispánica, Perfumerías Prieto, Abertis Telecom, Agencia Tributaria, Siliken, Ibérica de Automóvil, Franquicias Neco, Fomesa, Acanto instalaciones, Ferrocarrils de la Generalitat Valenciana, Medioambiente Dalmau...</p>',
-                'section' => 'company',
-                'order' => '1',
+                'icon' => 'university',
+                'title' => 'Empresa',
+                'handler' => 'company',
+                'header' => 'certificada en ISO 9001:2000 y 14001:2000',
+                'content' => '
+                    <div class="col-lg-4">
+                        <p class="text-muted large">TOPMADE es una empresa dedicada al diseño, instalación y mantenimiento de aire acondicionado calefacción y ACS, energía solar térmica y fotovoltaica.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-muted large">Actuamos en el área comercial, industrial y doméstico tanto para entidades públicas como privadas. Con más de 15 años de experiencia en instalaciones y mantenimientos.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-muted large">Nuestro ámbito de actuación se extiende a las comunidades de Valenciana, Murcia, Madrid, Aragón, Castilla la Mancha y otros como Castilla León, Andalucía o La Rioja.</p>
+                    </div>
+                '
             ],
             [
-                'icon' => 'qrcode',
-                'title' => 'Recursos Humanos',
-                'content' => '',
-                'section' => 'company',
-                'order' => '2',
+                'icon' => 'tasks',
+                'title' => 'Actividades',
+                'handler' => 'activities',
+                'header' => 'Contamos con las mejores y más avanzadas tecnologías',
+                'content' => '
+                    <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-compass fa-stack-1x fa-inverse"></i>
+                            </span>
+                        <h4 class="service-heading">Climatización</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item text-muted">Aire acondicionado</li>
+                            <li class="list-group-item text-muted">Ventilación</li>
+                            <li class="list-group-item text-muted">Calefacción</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
+                            </span>
+                        <h4 class="service-heading">Incendios</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item text-muted">Alarmas contra incendios</li>
+                            <li class="list-group-item text-muted">Domótica</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+                            </span>
+                        <h4 class="service-heading">Mantenimiento</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item text-muted">Asistencia técnica</li>
+                            <li class="list-group-item text-muted">Mantenimiento correctivo</li>
+                            <li class="list-group-item text-muted">Mantenimiento preventivo</li>
+                            <li class="list-group-item text-muted">Analíticas ambientales</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
+                            </span>
+                        <h4 class="service-heading">Electricidad</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item text-muted">Gas</li>
+                            <li class="list-group-item text-muted">Gasoil</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                            <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
+                            </span>
+                        <h4 class="service-heading">Energía Renovable</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item text-muted">Solar</li>
+                            <li class="list-group-item text-muted">Biomasa</li>
+                        </ul>
+                    </div>
+                </div>
+                '
             ],
             [
-                'icon' => 'archive',
-                'title' => 'Calidad y medio ambiente',
-                'content' => '',
-                'section' => 'company',
-                'order' => '3',
-            ],
-            [
-                'icon' => 'compass',
-                'title' => 'Climatización',
-                'content' => '',
-                'section' => 'activities',
-                'order' => '',
-            ],
-            [
-                'icon' => 'fire',
-                'title' => 'Incendios',
-                'content' => '',
-                'section' => 'activities',
-                'order' => '1',
-            ],
-            [
-                'icon' => 'wrench',
-                'title' => 'Mantenimientos',
-                'content' => '',
-                'section' => 'activities',
-                'order' => '2',
-            ],
-            [
-                'icon' => 'flash',
-                'title' => 'Electricidad',
-                'content' => '',
-                'section' => 'activities',
-                'order' => '3',
-            ],
-            [
-                'icon' => 'recycle',
-                'title' => 'Energía Renovable',
-                'content' => '',
-                'section' => 'activities',
-                'order' => '4',
-            ],
+                'icon' => 'users',
+                'title' => 'Clientes',
+                'handler' => 'clients',
+                'header' => 'Contamos con la confianza de clientes como',
+                'content' => '
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.adif.es/">
+                                <img src="img/clientes/adif.gif" class="img-responsive img-centered" alt="Adif">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.renfe.com/">
+                                <img src="img/clientes/renfe.png" class="img-responsive img-centered" alt="Renfe">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.urbem.es/">
+                                <img src="img/clientes/urbem.jpg" class="img-responsive img-centered" alt="Urbem">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.prieto.es/">
+                                <img src="img/clientes/prieto.gif" class="img-responsive img-centered" alt="Perfumerías Prieto">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="https://www.cellnextelecom.com/">
+                                <img src="img/clientes/abertistelecom.png" class="img-responsive img-centered" alt="CELLNEX">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.agenciatributaria.es/">
+                                <img src="img/clientes/agencia-tributaria.png" class="img-responsive img-centered" alt="Agencia Tributaria">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-offset-3 col-md-4 col-md-offset-2 col-sm-4 col-xs-4 img-grid">
+                            <img src="img/clientes/constructora-hispanica.png" class="img-responsive img-centered" alt="Constructora Hispanica">
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 img-grid">
+                            <img src="img/clientes/dalmau.jpg" class="img-responsive img-centered" alt="Medio Ambiente Dalmau">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.siliken.com/">
+                                <img src="img/clientes/siliken.gif" class="img-responsive img-centered" alt="Siliken">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.grupo-iberica.com/">
+                                <img src="img/clientes/grupo-iberica.png" class="img-responsive img-centered" alt="Ibérica de Automóvil">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.necobuffet.com/">
+                                <img src="img/clientes/neco.jpg" class="img-responsive img-centered" alt="Franquicias Neco">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.fomesa.net/">
+                                <img src="img/clientes/fomesa.png" class="img-responsive img-centered" alt="Fomesa">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://acanto.es/empresa_instalaciones_acanto.htm">
+                                <img src="img/clientes/acanto.jpg" class="img-responsive img-centered" alt="Acanto instalaciones">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 img-grid">
+                            <a href="http://www.fgv.es/">
+                                <img src="img/clientes/fgv.png" class="img-responsive img-centered" alt="Ferrocarrils de la Generalitat Valenciana">
+                            </a>
+                        </div>
+                    </div>
+                '
+            ]
         ];
 
-        $sections = [];
         foreach ($articles as $article) {
-            $sectionHandle = $article['section'];
-
-            if (! isset($sections[$sectionHandle])) {
-                $sections[$sectionHandle] = $this->section->findByHandel($sectionHandle);
-            }
-
-            $article['section_id'] = $sections[$sectionHandle]->id;
-
-            $this->article->create($article);
+            $this->dispatchFromArray(StoreArticle::class, $article);
         }
     }
 }

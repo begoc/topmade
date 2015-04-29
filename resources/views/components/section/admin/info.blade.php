@@ -1,5 +1,5 @@
 <div class="col-lg-12">
-    @if ($info)
+    @if (isset($info) && $info)
         <div class="alert alert-info" role="alert">
             {{$info}}
         </div>

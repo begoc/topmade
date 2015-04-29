@@ -10,22 +10,6 @@ use Topmade\Models\User;
 class Contact implements ContactContract
 {
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    public function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'zip_code' => 'numeric',
-            'phone' => 'regex:/\(\+?[0-9]{2}\) [0-9]{3,6} [0-9]{3,4} ?[0-9]{2,3}?$/'
-        ]);
-    }
-
-    /**
      * Get a contact instance.
      *
      * @param User $user

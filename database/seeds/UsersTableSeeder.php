@@ -1,20 +1,13 @@
 <?php
 
 
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Bus\DispatchesCommands;
+use Topmade\Commands\UserRegister;
 
 class UsersTableSeeder extends Seeder
 {
-    /**
-     * @var Registrar
-     */
-    protected $registrar;
-
-    public function __construct(Registrar $registrar)
-    {
-        $this->registrar = $registrar;
-    }
+    use DispatchesCommands;
 
     public function run()
     {
@@ -22,12 +15,13 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Top Made',
                 'email' => 'admin@topmade.net',
-                'password' => 'admin'
+                'password' => 'topmade',
+                'passwordConfirmation' => 'topmade'
             ]
         ];
 
         foreach ($users as $user) {
-            $this->registrar->create($user);
+            $this->dispatchFromArray(UserRegister::class, $user);
         }
     }
 }

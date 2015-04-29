@@ -2,7 +2,7 @@
 
 namespace Topmade\Contracts\Repositories;
 
-interface Contact extends Repository
+interface Contact
 {
     public function contact($user);
 

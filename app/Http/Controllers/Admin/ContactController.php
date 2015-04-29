@@ -1,19 +1,20 @@
 <?php namespace Topmade\Http\Controllers\Admin;
 
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Http\Request;
-use Topmade\Contracts\Repositories\Contact;
+use Topmade\Exceptions\ValidatorException;
+use Topmade\Handlers\Commands\UpdateContactHandler;
+use Topmade\Handlers\Commands\UpdateUserHandler;
 use Topmade\Http\Controllers\Controller;
 
 use Topmade\Http\Requests\CreateContactRequest;
 use Topmade\Http\Requests\ManageContactRequest;
+use Topmade\Commands\GetContact;
+use Topmade\Commands\UpdateContact;
 
 class ContactController extends Controller
 {
-    /**
-     * @var Contact
-     */
-    private $contact;
     /**
      * @var Guard
      */
@@ -23,13 +24,11 @@ class ContactController extends Controller
      * Create a new controller instance.
      *
      * @param \Illuminate\Contracts\Auth\Guard $auth
-     * @param Contact $contact
      */
-    public function __construct(Guard $auth, Contact $contact)
+    public function __construct(Guard $auth)
     {
         $this->middleware('auth');
 
-        $this->contact = $contact;
         $this->auth = $auth;
     }
 
@@ -39,13 +38,14 @@ class ContactController extends Controller
      * @Get("/admin/contact", as="admin.contact")
      *
      * @param Request $request
+     * @param Dispatcher $dispatcher
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request, Dispatcher $dispatcher)
     {
         $info = $request->session()->get('info');
 
-        $contact = $this->contact->contact($this->auth->user());
+        $contact = $dispatcher->dispatchFromArray(GetContact::class, ['user' => $this->auth->user()]);
 
         return view('admin.contact', compact('contact', 'info'));
     }
@@ -55,20 +55,21 @@ class ContactController extends Controller
      * @Post("/admin/contact")
      *
      * @param ManageContactRequest $request
+     * @param Dispatcher $dispatcher
      * @return Response
      */
-    public function store(ManageContactRequest $request)
+    public function store(ManageContactRequest $request, Dispatcher $dispatcher)
     {
-        $validator = $this->contact->validator($request->all());
+        try {
+            $dispatcher->pipeThrough([UpdateContactHandler::class, UpdateUserHandler::class]);
 
-        if ($validator->fails()) {
+            $dispatcher->dispatchFrom(UpdateContact::class, $request);
+        } catch (ValidatorException $e) {
             $this->throwValidationException(
                 $request,
-                $validator
+                $e->getValidator()
             );
         }
-
-        $this->contact->update($request->getId(), $request->all());
 
         return redirect('/admin/contact')->with('info', 'Contacto actualizado');
     }

@@ -2,11 +2,9 @@
 
 namespace Topmade\Contracts\Repositories;
 
-interface Article
+interface User
 {
     public function create(array $data);
 
-    public function update($id, array $data);
-
-    public function find($id);
+    public function save($user, array $data);
 }

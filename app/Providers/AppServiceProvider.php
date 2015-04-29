@@ -27,23 +27,27 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'Illuminate\Contracts\Auth\Registrar',
-            'Topmade\Services\Registrar'
-        );
-
-        $this->app->bind(
             'Topmade\Contracts\Repositories\Contact',
-            'Topmade\Repositories\Contact'
+            'Topmade\Repositories\Contact',
+            true
         );
 
         $this->app->bind(
             'Topmade\Contracts\Repositories\Section',
-            'Topmade\Repositories\Section'
+            'Topmade\Repositories\Section',
+            true
         );
 
         $this->app->bind(
             'Topmade\Contracts\Repositories\Article',
-            'Topmade\Repositories\Article'
+            'Topmade\Repositories\Article',
+            true
+        );
+
+        $this->app->bind(
+            'Topmade\Contracts\Repositories\User',
+            'Topmade\Repositories\User',
+            true
         );
     }
 }

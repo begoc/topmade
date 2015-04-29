@@ -15,38 +15,39 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
  * @property string email
  * @property Contact contact
  */
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+{
 
-	use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
-
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['name', 'email', 'password'];
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = ['password', 'remember_token'];
-
-	/**
-	 * User has one contact
-	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+    /**
+     * The database table used by the model.
+     *
+     * @var string
      */
-	public function contact()
-	{
-		return $this->hasOne('Topmade\Models\Contact');
-	}
+    protected $table = 'users';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'email', 'password'];
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * User has one contact
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function contact()
+    {
+        return $this->hasOne('Topmade\Models\Contact');
+    }
 
 }
