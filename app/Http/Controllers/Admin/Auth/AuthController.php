@@ -1,5 +1,6 @@
 <?php namespace Topmade\Http\Controllers\Admin\Auth;
 
+use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Http\Request;
 use Topmade\Exceptions\ValidatorException;
 use Topmade\Http\Controllers\Controller;
@@ -53,12 +54,13 @@ class AuthController extends Controller
      * Handle a registration request for the application.
      *
      * @param \Illuminate\Http\Request $request
+     * @param Dispatcher $dispatcher
      * @return \Illuminate\Http\Response
      */
-    public function postRegister(Request $request)
+    public function postRegister(Request $request, Dispatcher $dispatcher)
     {
         try {
-            $this->dispatchFrom(UserRegister::class, $request);
+            $dispatcher->dispatchFrom(UserRegister::class, $request);
         } catch (ValidatorException $e) {
             $this->throwValidationException(
                 $request,
