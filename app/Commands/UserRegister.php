@@ -4,6 +4,8 @@ use Topmade\Contracts\Command as CommandContract;
 
 class UserRegister extends Command implements CommandContract
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var
      */

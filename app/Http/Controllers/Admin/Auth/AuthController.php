@@ -61,7 +61,7 @@ class AuthController extends Controller
     public function postRegister(Request $request, Dispatcher $dispatcher)
     {
         try {
-            $dispatcher->dispatchFrom(UserRegister::class, $request);
+            $dispatcher->dispatchFrom(UserRegister::CLASSNAME, $request);
         } catch (ValidatorException $e) {
             $this->throwValidationException(
                 $request,

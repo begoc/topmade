@@ -6,8 +6,10 @@ use Topmade\Contracts\Repositories\Contact;
 use Topmade\Exceptions\ValidatorException;
 use Topmade\Validators\UpdateUserValidator;
 
-class UpdateContactHandler
+class UpdateContactHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var Contact
      */

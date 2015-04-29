@@ -5,8 +5,10 @@ use Topmade\Contracts\Repositories\User;
 use Topmade\Exceptions\ValidatorException;
 use Topmade\Validators\UserRegisterValidator;
 
-class UserRegisterHandler
+class UserRegisterHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var User
      */

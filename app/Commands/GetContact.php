@@ -5,6 +5,8 @@ use Topmade\Models\User;
 
 class GetContact extends Command implements CommandContract
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var User
      */

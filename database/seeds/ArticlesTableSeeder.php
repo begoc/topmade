@@ -181,7 +181,7 @@ class ArticlesTableSeeder extends Seeder
         ];
 
         foreach ($articles as $article) {
-            $this->dispatchFromArray(StoreArticle::class, $article);
+            $this->dispatchFromArray(StoreArticle::CLASSNAME, $article);
         }
     }
 }

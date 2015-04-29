@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
-            $this->dispatchFromArray(UserRegister::class, $user);
+            $this->dispatchFromArray(UserRegister::CLASSNAME, $user);
         }
     }
 }

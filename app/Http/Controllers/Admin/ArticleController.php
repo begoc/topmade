@@ -47,9 +47,9 @@ class ArticleController extends Controller
         $info = $request->session()->get('info');
 
         try {
-            $dispatcher->pipeThrough([MatchArticleHandler::class, GetArticleHandler::class]);
+            $dispatcher->pipeThrough([MatchArticleHandler::CLASSNAME, GetArticleHandler::CLASSNAME]);
 
-            $article = $dispatcher->dispatchFromArray(GetArticle::class, compact('handler'));
+            $article = $dispatcher->dispatchFromArray(GetArticle::CLASSNAME, compact('handler'));
         } catch (ArticleNotFoundException $e) {
             abort('404');
         }
@@ -68,7 +68,7 @@ class ArticleController extends Controller
     public function store(ManageArticleRequest $request, Dispatcher $dispatcher)
     {
         try {
-            $dispatcher->dispatchFrom(StoreArticle::class, $request);
+            $dispatcher->dispatchFrom(StoreArticle::CLASSNAME, $request);
         } catch (ArticleNotFoundException $e) {
             abort('404');
         } catch (ValidatorException $e) {

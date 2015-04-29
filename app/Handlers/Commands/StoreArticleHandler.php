@@ -5,8 +5,10 @@ use Topmade\Contracts\Repositories\Article;
 use Topmade\Exceptions\ValidatorException;
 use Topmade\Validators\StoreArticleValidator;
 
-class StoreArticleHandler
+class StoreArticleHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var Article
      */

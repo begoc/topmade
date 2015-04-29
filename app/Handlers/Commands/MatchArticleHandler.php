@@ -3,8 +3,10 @@
 use Topmade\Commands\GetArticle;
 use Topmade\Exceptions\ArticleNotFoundException;
 
-class MatchArticleHandler
+class MatchArticleHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * Create the command handler.
      *

@@ -45,7 +45,7 @@ class ContactController extends Controller
     {
         $info = $request->session()->get('info');
 
-        $contact = $dispatcher->dispatchFromArray(GetContact::class, ['user' => $this->auth->user()]);
+        $contact = $dispatcher->dispatchFromArray(GetContact::CLASSNAME, ['user' => $this->auth->user()]);
 
         return view('admin.contact', compact('contact', 'info'));
     }
@@ -61,9 +61,9 @@ class ContactController extends Controller
     public function store(ManageContactRequest $request, Dispatcher $dispatcher)
     {
         try {
-            $dispatcher->pipeThrough([UpdateContactHandler::class, UpdateUserHandler::class]);
+            $dispatcher->pipeThrough([UpdateContactHandler::CLASSNAME, UpdateUserHandler::CLASSNAME]);
 
-            $dispatcher->dispatchFrom(UpdateContact::class, $request);
+            $dispatcher->dispatchFrom(UpdateContact::CLASSNAME, $request);
         } catch (ValidatorException $e) {
             $this->throwValidationException(
                 $request,

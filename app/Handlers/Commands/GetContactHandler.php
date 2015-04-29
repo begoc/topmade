@@ -4,8 +4,10 @@ use Topmade\Commands\GetContact;
 
 use Topmade\Contracts\Repositories\Contact;
 
-class GetContactHandler
+class GetContactHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var Contact
      */

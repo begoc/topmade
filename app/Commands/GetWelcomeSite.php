@@ -11,6 +11,8 @@ use Topmade\Handlers\Commands\MatchArticleHandler;
 
 class GetWelcomeSite extends Command implements CommandContract, SelfHandling
 {
+    const CLASSNAME = __CLASS__;
+
     protected $sections;
 
     /**
@@ -40,9 +42,9 @@ class GetWelcomeSite extends Command implements CommandContract, SelfHandling
 
         foreach ($this->sections as $section) {
             try {
-                $dispatcher->pipeThrough([MatchArticleHandler::class, GetArticleHandler::class]);
+                $dispatcher->pipeThrough([MatchArticleHandler::CLASSNAME, GetArticleHandler::CLASSNAME]);
 
-                $articles[$section] = $dispatcher->dispatchFromArray(GetArticle::class, [
+                $articles[$section] = $dispatcher->dispatchFromArray(GetArticle::CLASSNAME, [
                     'handler' => $section
                 ]);
             } catch (\Exception $e) {

@@ -5,8 +5,10 @@ use Topmade\Commands\GetArticle;
 use Topmade\Contracts\Repositories\Article;
 use Topmade\Exceptions\ArticleNotFoundException;
 
-class GetArticleHandler
+class GetArticleHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var Article
      */

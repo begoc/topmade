@@ -6,8 +6,10 @@ use Topmade\Commands\UpdateContact;
 use Topmade\Contracts\Repositories\User;
 use Topmade\Validators\UpdateUserValidator;
 
-class UpdateUserHandler
+class UpdateUserHandler extends CommandHandler
 {
+    const CLASSNAME = __CLASS__;
+
     /**
      * @var User
      */
